@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Brocoli Adventure 🌱</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="game-screen">
+            <!-- Elementos del juego se generan aquí -->
+        </div>
+        <div class="ui">
+            <div class="score">Puntos: <span id="score">0</span></div>
+            <div class="level">Nivel: <span id="level">1</span></div>
+            <div class="lives">Vidas: <span id="lives">3</span></div>
+            <div id="powerup-timer" class="hidden">Power-Up: <span id="powerup-time">0</span>s</div>
+        </div>
+        
+        <!-- Controles táctiles -->
+        <div id="controls" class="hidden">
+            <div class="d-pad">
+                <div class="d-pad-center"></div>
+                <div class="d-pad-up" id="up-btn"><i class="fas fa-arrow-up"></i></div>
+                <div class="d-pad-right" id="right-btn"><i class="fas fa-arrow-right"></i></div>
+                <div class="d-pad-down"></div>
+                <div class="d-pad-left" id="left-btn"><i class="fas fa-arrow-left"></i></div>
+            </div>
+            <div class="action-buttons">
+                <div class="action-btn" id="jump-btn"><i class="fas fa-arrow-up"></i> Saltar</div>
+            </div>
+        </div>
+        
+        <div id="start-screen" class="screen">
+            <h1>Brocoli Adventure <span class="broccoli-icon">🌱</span></h1>
+            <div class="intro-animation">
+                <div class="brocoli-hero"></div>
+                <div class="enemy-sample pizza"></div>
+                <div class="enemy-sample hamburger"></div>
+                <div class="collectible-sample carrot"></div>
+            </div>
+            <p>¡Ayuda al brócoli a recolectar verduras y evita la comida chatarra!</p>
+            <input type="text" id="player-name" placeholder="Tu nombre" maxlength="10">
+            <button id="start-btn"><i class="fas fa-play"></i> Comenzar</button>
+            <div id="leaderboard">
+                <h2><i class="fas fa-trophy"></i> Tabla de Líderes</h2>
+                <ol id="leaderboard-list"></ol>
+            </div>
+        </div>
+        <div id="game-over-screen" class="screen hidden">
+            <h1>¡Game Over!</h1>
+            <div class="game-over-icon"><i class="fas fa-skull"></i></div>
+            <p>Puntaje final: <span id="final-score">0</span></p>
+            <button id="restart-btn"><i class="fas fa-redo"></i> Reintentar</button>
+        </div>
+    </div>
+
+    <!-- Sonidos -->
+    <audio id="jump-sound" src="assets/sounds/jump.mp3"></audio>
+    <audio id="collect-sound" src="assets/sounds/collect.mp3"></audio>
+    <audio id="powerup-sound" src="assets/sounds/powerup.mp3"></audio>
+    <audio id="gameover-sound" src="assets/sounds/gameover.mp3"></audio>
+    <audio id="background-music" loop src="assets/sounds/background.mp3"></audio>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
