@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Brocoli vs Comida Chatarra</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pantalla de inicio -->
+        <div id="start-screen" class="screen">
+            <div class="title-container">
+                <h1>BROCOLI VS<br>COMIDA CHATARRA</h1>
+                <div class="title-image"></div>
+            </div>
+            <div class="controls">
+                <p>Desliza para moverte</p>
+                <p>Toca para disparar</p>
+                <p><i class="fas fa-pause"></i> : Pausa</p>
+            </div>
+            <div class="difficulty-buttons">
+                <button id="easy-btn" data-difficulty="easy">FÁCIL</button>
+                <button id="medium-btn" data-difficulty="medium">MEDIO</button>
+                <button id="hard-btn" data-difficulty="hard">DIFÍCIL</button>
+            </div>
+            <button id="start-btn" class="main-action-btn">¡JUGAR!</button>
+        </div>
+
+        <!-- Pantalla de juego -->
+        <div id="game-screen" class="screen hidden">
+            <canvas id="game-canvas"></canvas>
+            <div class="game-ui">
+                <div class="stats">
+                    <span id="score">0</span>
+                    <span id="lives">❤️❤️❤️</span>
+                    <span id="level">Nivel 1</span>
+                </div>
+                <button id="pause-btn"><i class="fas fa-pause"></i></button>
+            </div>
+        </div>
+
+        <!-- Pantalla de pausa -->
+        <div id="pause-screen" class="screen hidden">
+            <h1>JUEGO EN PAUSA</h1>
+            <button id="resume-btn" class="main-action-btn">CONTINUAR</button>
+            <button id="restart-btn">REINICIAR</button>
+        </div>
+
+        <!-- Pantalla de game over -->
+        <div id="gameover-screen" class="screen hidden">
+            <h1>GAME OVER</h1>
+            <p id="final-score">Puntaje: 0</p>
+            <button id="playagain-btn" class="main-action-btn">JUGAR DE NUEVO</button>
+        </div>
+
+        <!-- Pantalla de nivel completado -->
+        <div id="level-complete-screen" class="screen hidden">
+            <h1>¡NIVEL COMPLETADO!</h1>
+            <div class="level-up-image"></div>
+            <p id="level-score">Puntaje: 0</p>
+            <button id="next-level-btn" class="main-action-btn">SIGUIENTE NIVEL</button>
+        </div>
+    </div>
+
+    <!-- Precargar imágenes -->
+    <div id="preloader" style="display:none;">
+        <img src="assets/player.png" alt="">
+        <img src="assets/enemy1.png" alt="">
+        <img src="assets/enemy2.png" alt="">
+        <img src="assets/enemy3.png" alt="">
+        <img src="assets/enemy4.png" alt="">
+        <img src="assets/enemy5.png" alt="">
+        <img src="assets/powerup1.png" alt="">
+        <img src="assets/powerup2.png" alt="">
+        <img src="assets/powerup3.png" alt="">
+        <img src="assets/bullet.png" alt="">
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
